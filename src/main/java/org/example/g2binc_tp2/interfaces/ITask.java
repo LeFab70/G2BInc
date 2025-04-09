@@ -1,6 +1,7 @@
 package org.example.g2binc_tp2.interfaces;
 
 import org.example.g2binc_tp2.entities.Task;
+import org.example.g2binc_tp2.exceptions.TaskNotFoundException;
 
 import java.util.List;
 import java.util.Optional;
@@ -37,7 +38,7 @@ public interface ITask {
      * @param idTask the id task
      * @return the task by id
      */
-    Optional<Task> getTaskById(int idTask);
+    Task getTaskById(int idTask) throws TaskNotFoundException;
 
     /**
      * Update task task.

@@ -1,6 +1,9 @@
 package org.example.g2binc_tp2.interfaces;
 
 import org.example.g2binc_tp2.entities.Automobile;
+import org.example.g2binc_tp2.exceptions.AutoNotFoundException;
+import org.example.g2binc_tp2.exceptions.InvalidHireDateException;
+import org.example.g2binc_tp2.exceptions.KilometrageException;
 
 import java.util.List;
 import java.util.Optional;
@@ -15,14 +18,14 @@ public interface IAutomobile {
      * @param automobile the automobile
      * @return the automobile
      */
-    Automobile addAuto(Automobile automobile);
+    Automobile addAuto(Automobile automobile) throws AutoNotFoundException;
 
     /**
      * Remove auto.
      *
      * @param numSerie the num serie
      */
-    void removeAuto(int numSerie);
+    void removeAuto(int numSerie) throws AutoNotFoundException;
 
     /**
      * Update auto automobile.
@@ -30,7 +33,7 @@ public interface IAutomobile {
      * @param automobile the automobile
      * @return the automobile
      */
-    Automobile updateAuto(Automobile automobile);
+    Automobile updateAuto(Automobile automobile) throws AutoNotFoundException, KilometrageException, InvalidHireDateException;
 
     /**
      * Gets all auto.
@@ -45,5 +48,5 @@ public interface IAutomobile {
      * @param numSerie the num serie
      * @return the auto by id
      */
-    Optional<Automobile> getAutoById(int numSerie);
+    Automobile getAutoById(int numSerie) throws AutoNotFoundException;
 }

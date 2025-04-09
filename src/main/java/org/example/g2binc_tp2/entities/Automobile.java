@@ -1,5 +1,8 @@
 package org.example.g2binc_tp2.entities;
 
+import org.example.g2binc_tp2.exceptions.InvalidHireDateException;
+
+import java.time.LocalDate;
 import java.util.Objects;
 
 /**
@@ -23,12 +26,13 @@ public class Automobile {
      * @param kilometrage the kilometrage
      * @param annee       the annee
      */
-    public Automobile(int numSerie, String marque, String modele, String numPlaque, double kilometrage, int annee) {
+    public Automobile(int numSerie, String marque, String modele, String numPlaque, double kilometrage, int annee) throws InvalidHireDateException {
         this.numSerie = numSerie;
         this.marque = marque;
         this.modele = modele;
         this.numPlaque = numPlaque;
         this.kilometrage = kilometrage;
+        if (annee>(LocalDate.now()).getYear()) throw new InvalidHireDateException(annee+" Valeur année incorrecte");
         this.annee = annee;
     }
 
