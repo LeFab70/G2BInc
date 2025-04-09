@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.Optional;
 
 public class AutomobileImpl implements IAutomobile {
-    List<Automobile> listAuto=new ArrayList<>();
+   private final List<Automobile> listAuto=new ArrayList<>();
 
 
     @Override

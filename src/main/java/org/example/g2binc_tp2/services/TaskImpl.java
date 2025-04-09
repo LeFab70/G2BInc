@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Optional;
 
 public class TaskImpl implements ITask {
-    List<Task> tasks=new ArrayList<>();
+   private final List<Task> tasks=new ArrayList<>();
 
     @Override
     public Task addTask(Task task) {

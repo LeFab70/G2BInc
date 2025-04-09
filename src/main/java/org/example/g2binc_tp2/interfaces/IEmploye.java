@@ -1,6 +1,7 @@
 package org.example.g2binc_tp2.interfaces;
 
 import org.example.g2binc_tp2.entities.Employe;
+import org.example.g2binc_tp2.exceptions.EmployeNotFoundException;
 
 import java.util.List;
 import java.util.Optional;
@@ -22,14 +23,14 @@ public interface IEmploye {
      * @param idEmployee the id employee
      * @return the employee by id
      */
-    Optional<Employe> getEmployeeById(int idEmployee);
+    Employe getEmployeeById(int idEmployee) throws EmployeNotFoundException;
 
     /**
      * Update employee.
      *
      * @param emp the emp
      */
-    void updateEmployee(Employe emp);
+    void updateEmployee(Employe emp) throws EmployeNotFoundException;
 
     /**
      * Delete employee.
